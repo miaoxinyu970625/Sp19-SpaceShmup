@@ -22,11 +22,11 @@ public class BoundsCheck : MonoBehaviour
 
     void Awake()
     {
-        camHeight = Camera.main.orthographicSize;                            // b
-        camWidth = camHeight * Camera.main.aspect;                           // c
+        camHeight = Camera.main.orthographicSize;                            
+        camWidth = camHeight * Camera.main.aspect;                           
     }
     void LateUpdate()
-    {                                                     // d
+    {                                                     
         Vector3 pos = transform.position;
         isOnScreen = true;
         offRight = offLeft = offUp = offDown = false;
@@ -54,8 +54,8 @@ public class BoundsCheck : MonoBehaviour
         isOnScreen = !(offRight || offLeft || offUp || offDown);
 
         if (keepOnScreen && !isOnScreen)
-        {                                // f
-            transform.position = pos;                                       // g
+        {                             
+            transform.position = pos;                                   
             isOnScreen = true;
             offRight = offLeft = offUp = offDown = false;
         }

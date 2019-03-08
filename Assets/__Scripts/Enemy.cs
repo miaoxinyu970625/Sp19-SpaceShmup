@@ -37,14 +37,14 @@ public class Enemy : MonoBehaviour
 
     }
     public virtual void Move()
-    {                                             // b
+    {                                         
         Vector3 tempPos = pos;
         tempPos.y -= speed * Time.deltaTime;
         pos = tempPos;
     }
     void OnCollisionEnter(Collision coll)
     {
-        GameObject otherGO = coll.gameObject;                                  // a
+        GameObject otherGO = coll.gameObject;                                  
         if (otherGO.tag == "ProjectileHero")
         {                               // b
             Destroy(otherGO);        // Destroy the Projectile
@@ -52,7 +52,7 @@ public class Enemy : MonoBehaviour
         }
         else
         {
-            print("Enemy hit by non-ProjectileHero: " + otherGO.name);     // c
+            print("Enemy hit by non-ProjectileHero: " + otherGO.name);     
         }
     }
 
